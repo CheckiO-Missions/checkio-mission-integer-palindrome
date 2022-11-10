@@ -1,15 +1,34 @@
 <p>
-    The idea of the mission is very easy. You need to determine whether the given integer is a palindrome or not in base B.
-    A number is a palindrome if it reads the same in both directions, for example 121 is a palindrome, and 122 is not.
-    If the integer is a palindrome in base B, return True, if not, return False.
+    The idea of the mission is very easy. You need to determine whether the given {% if is_js %}number{% else %}integer{% endif %} (in base <b class="code">10</b>)is a palindrome or not in base <b class="code">B</b>.
+    A number is a palindrome if it reads the same in both directions, for example <b class="code">121</b> is a palindrome, and <b class="code">122</b> is not.
+    If the {% if is_js %}number{% else %}integer{% endif %} is a palindrome in base <b class="code">B</b>, return <b class="code">True</b>, if not, return <b class="code">False</b>.
+    <a target="_blank" href="https://en.wikipedia.org/wiki/Radix">Read more about number bases.</a>  
+</p>
+<p>
+    The most common base is decimal. To convert {% if is_js %}a number{% else %}an integer{% endif %} from decimal to another base you need to devide it by base and take reminders until the number becomes equal zero. Let's look at the following example - convert decimal {% if is_js %}number{% else %}integer{% endif %} <b class="code">6</b> into the binary form (base - <b class="code">2</b>).    
+</p>
+<p>
+    <table>
+        <tr>
+            <th><b>{% if is_js %}number{% else %}integer{% endif %}</b></th>
+            <th><b>quotient</b></th>
+            <th><b>reminder</b></th>
+            <th><b>normal</b></th>
+            <th><b>reversed</b></th>
+        </tr>
+        <tr><td>6</td><td>3</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>3</td><td>1</td><td>1</td><td>1 0</td><td>0 1</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td><td>1 1 0</td><td>0 1 1</td></tr>
+        <tr><td>0</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+    Since reversed is not equal normal - decimal <b class="code">6</b> is not a palindrom by base <b class="code">2</b>.
+</p>
+<p>
+    <strong>Input:</strong> Given {% if is_js %}Number{% else %}integer{% endif %} and base B({% if is_js %}Number{% else %}integer{% endif %}).
 </p>
 
 <p>
-    <strong>Input: </strong> Given {% if is_js %}Number{% else %}Int{% endif %} and base B({% if is_js %}Number{% else %}Int{% endif %}).
-</p>
-
-<p>
-    <strong>Output: </strong> Bool.
+    <strong>Output:</strong> Boolean.
 </p>
 
 
