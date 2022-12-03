@@ -1,7 +1,7 @@
 <p>
     You need to determine whether the given {% if is_js %}number{% else %}integer{% endif %} (in base <b class="code">10</b>) is a palindrome or not in base <b class="code">B</b>. Base (or radix) is written as subscript text.
     A number is a palindrome if it reads the same in both directions, for example <b class="code">121<sub>10</sub></b> is a palindrome, and <b class="code">122<sub>10</sub></b> is not.
-    If the {% if is_js %}number<sub>B</sub>{% else %}integer<sub>B</sub>{% endif %} is a palindrome, return <b class="code">True</b>, if not, return <b class="code">False</b>.
+    If the {% if is_js %}number<sub>B</sub>{% else %}integer<sub>B</sub>{% endif %} is a palindrome, return <b class="code">{% if is_js %}t{% else %}T{% endif %}rue</b>, if not, return <b class="code">{% if is_js %}f{% else %}F{% endif %}alse</b>.
     <a target="_blank" href="https://en.wikipedia.org/wiki/Radix">Read more about number bases.</a>  
 </p>
 <p>
@@ -31,7 +31,7 @@
 </p>
 
 <p>
-    <strong>Output:</strong> Boolean.
+    <strong>Output:</strong> Bool{% if is_js %}ean{% else %}{% endif %}.
 </p>
 
 
