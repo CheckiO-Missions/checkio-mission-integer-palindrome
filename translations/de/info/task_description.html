@@ -1,0 +1,53 @@
+<p>
+    Sie müssen feststellen, ob die angegebene Zahl {% if is_js %}{% else %} ganze Zahl{% endif %} (zur Basis <b class="code">10</b>) ein Palindrom ist oder nicht zur Basis <b class="code">B</b>. Die Basis (oder Radix) wird als tiefgestellter Text geschrieben.
+    Eine Zahl ist ein Palindrom, wenn sie sich in beiden Richtungen gleich liest, zum Beispiel <b class="code">121<sub>10</sub></b> ist ein Palindrom, und <b class="code">122<sub>10</sub></b> ist es nicht.
+    Wenn die Zahl {% if is_js %}<sub>numberB</sub>{% else %}<sub>integerB</sub>{% endif %} ein Palindrom ist, geben Sie <b class="code">{% if is_js %}t{% else %}T{% endif %}rue</b>, wenn nicht, geben Sie zurück <b class="code">{% if is_js %}f{% else %}F{% endif %}alse</b>.
+    <a target="_blank" href="https://en.wikipedia.org/wiki/Radix">Read more about number bases.</a>  
+</p>
+<p>
+    Die häufigste Basis ist die Dezimalzahl. Um {% if is_js %}eine <sub>Zahl10</sub>{% else %}eine ganze <sub>Zahl10</sub>{% endif %} in eine andere Basis zu konvertieren, müssen Sie sie durch die Basis teilen und so lange erinnern, bis die Zahl gleich Null wird. Schauen wir uns das folgende Beispiel an - konvertieren Sie {% if is_js %}Zahl{% else %}ganze Zahl{% endif %} <b class="code">6<sub>10</sub></b> in die binäre Form <b class="code">6<sub>2</sub></b>.    
+</p>
+<p>
+    <table>
+        <tr>
+            <th><b>{% if is_js %}Number{% else %}Integer{% endif %}</b></th>
+            <th><b>Quotient</b></th>
+            <th><b>Reminder</b></th>
+            <th><b>Normal</b></th>
+            <th><b>Reversed</b></th>
+        </tr>
+        <tr><td>6</td><td>3</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>3</td><td>1</td><td>1</td><td>10</td><td>01</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td><td>110</td><td>011</td></tr>
+        <tr><td>0</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+    Da die umgekehrte <b class="code">011</b> nicht gleich der normalen <b class="code">110</b> ist - <b class="code">6<sub>2</sub></b> ist kein Palindrom.
+</p>
+<p>
+    Um zur Dezimalform zurückzukehren, beginnen Sie bei Null, multiplizieren mit der Basis und fügen Erinnerungen hinzu. Für <b class="code">6<sub>2</sub> == 110</b> lautet sie <b class="code">(((0*2) + 1)*2 + 1)*2 + 0 = 6</b>. 
+</p>
+<p>
+   <strong>Eingabe:</strong> Gegeben {% if is_js %}Zahl{% else %}Ganzzahl{% endif %} und Basis B ({% if is_js %}Zahl{% else %}Ganzzahl{% endif %}).
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Bool{% if is_js %}ean{% else %}{% endif %}.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Beispiele:</strong>
+    </p>
+
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
+</div>
+
+<p>
+    <strong>Vorbedingungen:</strong>
+    <li>zahl &gt;= 0;</li>
+    <li>zahl ist eine ganze Zahl;</li>
+    <li> B &gt;= 2;</li>
+    <li>B ist eine ganze Zahl.</li>
+</p>
